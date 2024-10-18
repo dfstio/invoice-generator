@@ -1,0 +1,11 @@
+env.json
+.DS_Store
+yarn-error.log
+node_modules/
+.yarn/
+.pnp.cjs
+.pnp.loader.mjs
+.vscode/
+data/invoice.json
+data/Signature.jpeg
+result/

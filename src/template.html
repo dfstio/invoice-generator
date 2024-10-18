@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Invoice</title>
+    <style>
+      /* Styles go here */
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+        color: #000; /* Black text */
+        margin: 0;
+        padding: 0;
+        background-color: #fff; /* White background */
+      }
+      .invoice-box {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 30px;
+
+        background-color: #fff; /* White background */
+        font-size: 16px;
+        line-height: 24px;
+        color: #000; /* Black text */
+      }
+      .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+        border-collapse: collapse;
+      }
+      .invoice-box table td {
+        padding: 10px;
+        vertical-align: top;
+      }
+      .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+      }
+      .invoice-box h1 {
+        font-size: 36px;
+        line-height: 36px;
+        color: #000; /* Black text */
+        margin: 0;
+      }
+      .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+      }
+      .heading td {
+        background: #fff; /* White background */
+        color: #000; /* Black text */
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+        padding: 10px;
+      }
+      .item td {
+        border-bottom: 1px solid #eee;
+      }
+      .total td {
+        font-weight: bold;
+        font-size: 18px;
+        border-top: 2px solid #eee;
+        padding-top: 10px;
+        color: #000; /* Black text */
+      }
+      .thanks {
+        margin-top: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #000; /* Black text */
+      }
+      .signature {
+        margin-top: 50px;
+        text-align: right;
+        font-style: normal;
+        color: #000; /* Black text */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-box">
+      <table>
+        <tr class="top">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td>
+                  <h1>Invoice</h1>
+                </td>
+                <td style="text-align: right">
+                  Invoice #: {{invoiceNumber}}<br />
+                  Date: {{invoiceDate}}<br />
+                  Due Date: {{dueDate}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- From and To Information -->
+        <tr class="information">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td>
+                  <strong>From:</strong><br />
+                  {{from.name}}<br />
+                  {{from.addressLine1}}<br />
+                  {{from.addressLine2}}<br />
+                  {{from.city}}, {{from.country}} {{from.postalCode}}<br />
+                  Email: {{from.email}}
+                </td>
+                <td style="text-align: right">
+                  <strong>To:</strong><br />
+                  {{to.name}}<br />
+                  {{to.addressLine1}}<br />
+                  {{to.city}}, {{to.country}}<br />
+                  Email: {{to.email}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Description -->
+        <tr class="heading">
+          <td colspan="2">Description</td>
+        </tr>
+        <tr class="item">
+          <td colspan="2">{{description}}</td>
+        </tr>
+        <!-- Payment Details -->
+        <tr class="heading">
+          <td colspan="2">Payment Details</td>
+        </tr>
+        <tr class="item">
+          <td colspan="2">
+            Payment of {{paymentDetails.amount}} to the following wallet:<br />
+            MINA Address: {{paymentDetails.walletAddress}}
+          </td>
+        </tr>
+        <!-- Total -->
+        <tr class="total">
+          <td></td>
+          <td style="text-align: right">Total Due: {{totalDue}}</td>
+        </tr>
+      </table>
+      <!-- Notes -->
+      <p>{{notes}}</p>
+      <p class="thanks" style="margin-bottom: 0px">{{thankYouMessage}}</p>
+      <p
+        class="signature"
+        style="text-align: center; margin-top: 0px; margin-bottom: 0px"
+      >
+        <img
+          src="{{signatureImage}}"
+          alt="Signature"
+          style="display: block; margin: 0 auto; width: 100px"
+        />
+      </p>
+      <p class="signature" style="margin-bottom: 0px; margin-top: 0px">
+        {{signature}}
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "from": {
+    "name": "John Doe",
+    "addressLine1": "123 Example Street",
+    "addressLine2": "Suite 456",
+    "city": "Example City",
+    "country": "Example Country",
+    "postalCode": "12345",
+    "email": "john.doe@example.com"
+  },
+  "to": {
+    "name": "Example Company",
+    "addressLine1": "789 Sample Avenue",
+    "city": "Sample City",
+    "country": "Sample Country",
+    "email": "contact@examplecompany.com"
+  },
+  "invoiceDate": "January 1, 2025",
+  "invoiceNumber": "INV-20250101-001",
+  "dueDate": "January 31, 2025",
+  "description": "Services rendered for the month of December 2024.",
+  "paymentDetails": {
+    "amount": "1,000 Example Tokens",
+    "walletAddress": "0x1234567890abcdef1234567890abcdef12345678"
+  },
+  "totalDue": "1,000 Example Tokens",
+  "notes": "Please make payment to the specified wallet address within 30 days from the date of this invoice.",
+  "thankYouMessage": "Thank you for your prompt payment!",
+  "signature": "John Doe",
+  "signatureImage": ""
+}
